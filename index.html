@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Un regalo per te</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', cursive;
+      background: #f5e9ff;
+      color: #3c1f47;
+      overflow-x: hidden;
+    }
+
+    section {
+      width: 100%;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: transform 1s ease-in-out;
+      position: relative;
+    }
+
+    #prima {
+      z-index: 2;
+    }
+
+    #secondo {
+      position: absolute;
+      top: 100vh;
+      left: 0;
+      background: #ecd9f9;
+      z-index: 1;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      margin: 0 20px;
+    }
+
+    .freccia {
+      margin-top: 30px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    .headphones {
+      font-size: 3rem;
+      opacity: 0;
+      animation: appear 1.5s ease forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes appear {
+      to { opacity: 1; }
+    }
+
+    .copertina {
+      margin-top: 20px;
+      width: 80%;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .btn-ascolta {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #8e44ad;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-ascolta:hover {
+      background-color: #6c3483;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRIMA SCHERMATA -->
+  <section id="prima">
+    <p>
+      Questo è un regalo per te, un regalo particolare.<br>
+      Un qualcosa che resterà per sempre solo tuo,<br>
+      un qualcosa che parla solo di te.<br>
+      Questo è quello che penso io di te.
+    </p>
+
+    <!-- Freccia SVG -->
+    <svg id="freccia" class="freccia" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </section>
+
+  <!-- SECONDA SCHERMATA -->
+  <section id="secondo">
+    <div class="headphones">🎧</div>
+    <p style="margin-top: 15px;">Cuffie alla mano e preparati ad ascoltare</p>
+
+    <!-- IMMAGINE COPERTINA -->
+    <img src="./COPERTINA.png" alt="Copertina" class="copertina" />
+
+    <!-- BOTTONE ASCOLTA -->
+    <a class="btn-ascolta" href="https://docs.google.com/uc?export=download&id=1GKbnd3wJeG_AYgkPpnY1zntYLjNVYMq4" target="_blank">ASCOLTA</a>
+  </section>
+
+  <script>
+    document.getElementById('freccia').addEventListener('click', function () {
+      document.getElementById('prima').style.transform = 'translateY(-100vh)';
+      document.getElementById('secondo').style.top = '0';
+    });
+  </script>
+
+</body>
+</html>
